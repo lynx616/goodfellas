@@ -1,30 +1,36 @@
 import React from 'react'
 
-function Navbar() {
+function Navbar({catefun, trendfun}) {
+
+
+
   return (
     <><div className="whole">
-    <video className="vid-nav" src="video1.mkv" loop muted playsInline autoPlay/>
+    <video className="vid-nav" src="video1.mp4" loop muted playsInline autoPlay/>
     <div className="navbar">
-        <img role='button' src="logo1.png" alt="Logo"/>
+        <img role='button' src="icon.png" alt="Logo"/>
         <ul className="navul">
-         <li><a href="default.asp">Home</a></li>
-         <li><a href="news.asp">Categories</a></li>
-         <li><a href="contact.asp">Top Anime</a></li>
-         <li><a href="about.asp">About</a></li>
-         <li><a href="about.asp">Trendings</a></li>
+         <li><a className='top' href="default.asp">Home</a></li>
+         <li><a className='top' onClick={catefun} href="#">Categories</a></li>
+         <li><a className='top' href="contact.asp">Top Anime</a></li>
+         {/* <li><a className='top' href="about.asp">About</a></li> */}
+         <li><a className='top' onClick={trendfun} href="#">Trendings</a></li>
         </ul>
         <div className="search-bar">      
-        <input type="text" placeholder="Search.."/>
+        <input  type="text" placeholder="Type here.."/>
         <button type="submit">search</button>
         </div> 
         
     </div>
     <div className="dth-txt">
-    <h1>DEATH NOTE</h1>
-    <p>The story follows Light Yagami, a genius high school student who discovers a mysterious notebook: the "Death Note".</p>
-    <button>Show more</button>
+    <h1>ATTACK ON <span className='titan'>TITAN</span></h1>
+    <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls...</p>
+    {/* btn1 */}
+    
+    <a><button><span class="main-text">Show more<span> <span>→</span> </span></span></button></a>
     </div>
     </div>
+    
     </>
     
   );

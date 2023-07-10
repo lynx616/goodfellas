@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
 
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -10,23 +16,40 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+    display: none;
+  }
 .whole{
     
     /* border: 2px solid red; */
     height: 100vh;
+    overflow: hidden;
     /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(139,139,139,0) 100%); */
-    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 .navbar{
     display: flex;
     align-items: center;
     /* border: 2px solid red; */
-    background-color: transparent;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(139,139,139,0) 100%);
     padding: 20px;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     width: 100%;
-    
+    overflow: hidden;
+    z-index: 1;
+    animation: opacity 5s linear alternate;
+}
+@keyframes opacity{
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
 
 .vid-nav{
@@ -37,7 +60,7 @@
     top: 0;
     z-index: -1;
 }
-/* @media(min-aspect-ratio:16/9){
+@media(min-aspect-ratio:16/9){
     .vid-nav{
         width: 100%;
         height: auto;
@@ -48,9 +71,9 @@
         width: auto;
         height: 100%;
     }
-} */
+}
 .navbar img{
-    width: 4.5%;
+    width: 3%;
     opacity: 30%;
     transition: 0.3s ease-in-out;
     animation: glow 5s linear alternate-reverse infinite ;
@@ -122,26 +145,68 @@
     padding: 5px;
     border: none;
     border-radius: 20px;
-    
+    cursor: pointer;
 }
 .dth-txt{
     /* border: 2px solid red; */
     width: 50%;
     color: white;
     /* font-size: 2rem; */
-    padding-left: 40px;
+    /* padding: 40px; */
     position: relative;
-    top: 340px;
+    top: 480px;
+    left: 360px;
     letter-spacing: 2px;
+    text-align: center;
+    
     
 }
+
 .dth-txt h1{
-    font-size: 4rem;
+    font-size: 3.5em;
     filter: drop-shadow(rgb(147, 147, 147) 0px 0px 0.3rem);
+    letter-spacing: 2px;
+    font-family: 'Cinzel Decorative', cursive;
 }
+/* typing animation */
+.dth-txt h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+      /* border: 1px solid red; */
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(195, 0, 0); }
+  }
 .dth-txt p{
     font-size: 1rem;
     opacity: 80%;
+    animation: opacit 7.5s linear alternate;
+}
+@keyframes opacit{
+    0%{
+        opacity: 0%;
+    }
+    45%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 80%;
+    }
 }
 .dth-txt button{
     width: 25%;
@@ -157,13 +222,297 @@
     text-decoration: none;
     text-align: center;
     transition: 0.3s ease-in-out;
- 
+    animation: opaci 7.5s linear alternate;
     background: transparent;
     border: 2px solid white;
     color: white;
     filter: drop-shadow(rgb(147, 147, 147) 0px 0px 0.3rem);
 }
+@keyframes opaci{
+    0%{
+        opacity: 0%;
+    }
+    65%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 80%;
+    }
+}
 .dth-txt button:hover{
+    background: #fff;
+    border: 2px solid white;
+    color: black;
+    filter: drop-shadow(rgb(147, 147, 147) 0px 0px 0.3rem);
+}
+
+/* btn1 css */
+.secpage{
+    border: 1px solid red;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    justify-content: space-around;
+    text-align: center;
+    background-color: #1a1818;
+    
+}
+.secpage h1{
+   
+    width: 100%;
+    filter: drop-shadow(rgb(147, 147, 147) 0px 0px 0.3rem);
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+    
+}
+.categ{
+    /* border: 1px solid red; */
+    position: absolute;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 15%;
+    left: 25%;
+    color: white;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.08);
+    
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: .7em;
+    letter-spacing: 0.9px;
+    animation: ani 0.8s linear alternate;
+    transition: .4s ease-in-out;
+
+}
+@keyframes ani{
+    0%{
+        opacity: 0%;
+
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.categ h1{
+    /* border: 1px solid red; */
+    height: 100%;
+    padding-bottom: 10px;
+}
+.card {
+    /* width: 210px; */
+    width: 85%;
+    height: 254px;
+    border-radius: 4px;
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+    margin: auto;
+    padding-bottom: 20px;
+    
+    /* border: 1px solid red; */
+}
+
+
+  
+  .card p {
+    
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .5s ease-in-out;
+    border: 1px solid #cbcbcbc1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card p:hover {
+    flex: 5;
+    transition: all .5s ease-in-out;
+    border: 1px solid #ffffffc1;
+  }
+  
+  .card p span {
+    min-width: 14em;
+    padding: .5em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    color: #cbcbcbc1;
+    letter-spacing: .1em;
+  }
+  
+  .card p:hover span {
+    transform: rotate(0);
+    color: #ffffffc1;
+  }
+
+  .back-cate{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .titan{
+    color: red;
+    font-family: 'Cinzel Decorative', cursive;
+    
+  }
+   /* card */
+   /* .card-holder {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 10vh;
+ 
+    background-color: #1a1818;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    border: 1px solid red;
+  } */
+  .card-box{
+    /* border:2px solid red; */
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 2.5%;
+    background-color: #1a1818;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+  
+  .card-main {
+    
+    border: 2px solid grey;
+    position: relative;
+    width: 250px;
+    height: 350px;
+    color: #2e2d31;
+    background: #131313;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 30px;
+
+    
+  }
+  
+  
+  .temporary_text {
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0.6;
+    color: #f8f8f8;
+    transition: 0.8s;
+  }
+  .temporary_text img{
+    width: 100%;
+    transform: scale(1.1);
+  }
+  .card-main:hover .temporary_text{
+    opacity: 0.9;
+    transition: 1s;
+    transform: scale(1.5);
+
+  }
+  
+ 
+  
+  .card_content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    padding-top: 10px;
+    background: linear-gradient(to top, rgb(0,0,0)70%, rgba(0, 0, 0, 0.392));
+    outline: 2px solid white;
+    border-top-left-radius: 20px;
+    transform: translateY(80%);
+    transition: transform .25s;
+
+    
+  }
+
+  .card_title {
+    font-weight: bold;
+    font-family: "Poppins";
+    color: #ffffff;
+    line-height: 1.3;
+    font-size: 1.3rem;
+    display: inline-block;
+    overflow: hidden;
+    width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+  }
+  
+  
+  
+  .card_description {
+    font-size: 14px;
+    font-family: "Poppins";
+    opacity: 0;
+    transition: opacity .4s;
+    text-align: left;
+  }
+  
+  .card-main:hover .card_content {
+    transform: translateY(0);
+    transition: 0.2s ease-in;
+    transition-delay: 0.2s;
+    background: rgba(0, 0, 0, 0.704);
+
+  }
+  
+  .card-main:hover .card_description {
+    opacity: 70%;
+    transition-delay: .35s;
+    color: white;
+  }
+  
+  
+  
+  .card-main button{
+    width: 58%;
+    font-size: .7rem;
+    margin-top: 20px;
+   padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    filter: drop-shadow(rgb(147, 147, 147) 0px 0px 0.3rem);
+}
+.card-main button:hover{
     background: #fff;
     border: 2px solid white;
     color: black;
